@@ -1,0 +1,9 @@
+{
+  "browser": "Headless",
+  "implicitWaitTimeout": "15",
+  "hubUrl": "http://selenium-hub:4444/wd/hub",
+  "useHub": "false",
+  "environment": "dev", //Acccepted values comes from testdata.json environment names
+  "takeScreenshot": "true",
+  "takeScreenshotOnlyforFailedStep": "true"
+}

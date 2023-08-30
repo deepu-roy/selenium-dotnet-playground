@@ -1,0 +1,19 @@
+FROM public.ecr.aws/bitnami/node:16 AS dev
+
+# https://docs.cypress.io/guides/continuous-integration/introduction#Dependencies
+RUN apt-get update && \
+    export DEBIAN_FRONTEND=noninteractive && \
+    apt-get -y install --no-install-recommends \
+        libgtk2.0-0 \
+        libgtk-3-0 \
+        libgbm-dev \
+        libnotify-dev \
+        libgconf-2-4 \
+        libnss3 \
+        libxss1 \
+        libasound2 \
+        libxtst6 xauth xvfb \
+        microsoft-edge-stable
+
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN sudo dpkg -i google-chrome-stable_current_amd64.deb
